@@ -1,0 +1,29 @@
+<p-panel [header]="'Pipes Numericos'" class="p-1">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, inventore, ipsa. Atque beatae deserunt enim eveniet
+    magnam magni, necessitatibus quo recusandae totam! Corporis, dolorum officiis perferendis quaerat quis repellendus
+    ut!</p>
+</p-panel>
+<!-- TEXT_PIPES -->
+<div class="grid">
+  <div class="col-12 md:col-4 lg:col-4">
+    <p-card [header]="'Ventas Netas'" [subheader]="'del presente año'">
+      {{ totalSells | number:'1.6-6' }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4 lg:col-4">
+    <p-card [header]="'Ventas Brutas'" [subheader]="'del presente año'">
+      <!-- para manejo de moneda (currency)  -->
+      <!-- currencyCode usa ISO4217 https://en.wikipedia.org/wiki/ISO_4217 -->
+      {{ totalSells | currency:'BOB':'symbol-narrow':'1.8-8' }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4 lg:col-4">
+    <p-card [header]="'Ganancias porcentual'" [subheader]="'del presente año'">
+      <!-- para manejo de moneda (currency)  -->
+      <!-- currencyCode usa ISO4217 https://en.wikipedia.org/wiki/ISO_4217 -->
+      {{ percent | percent:'1.2-2' }}
+    </p-card>
+  </div>
+</div>
